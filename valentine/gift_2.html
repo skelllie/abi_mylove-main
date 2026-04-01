@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift 2 for Abi Shortcake 💝</title>
+    <link rel="stylesheet" href="gift2.css">
+    <style>
+        /* Additional CSS for bounce-in animation */
+        .music-card {
+            opacity: 0;
+            transform: translateY(60px);
+            animation: cardBounceIn 1.2s ease forwards 0.8s;
+        }
+        @keyframes cardBounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.85);
+            }
+            60% {
+                transform: translateY(-25px) scale(1.03);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* Vinyl and Video bounce */
+        .vinyl {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: itemBounce 1s ease forwards 1.2s;
+        }
+        .video-player {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: itemBounce 1s ease forwards 1.5s;
+            width: 560px;           /* Palaki ng video */
+            height: 340px;          /* Palaki ng video */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        .video-player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Removed the blocking overlay */
+        .video-overlay {
+            display: none !important;
+        }
+
+        @keyframes itemBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+            55% {
+                transform: translateY(-20px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* Enhanced title bounce - each letter pops with different delay */
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: letterPop 0.9s ease forwards;
+        }
+        .letter:nth-child(1)  { animation-delay: 0.1s; }
+        .letter:nth-child(2)  { animation-delay: 0.2s; }
+        .letter:nth-child(3)  { animation-delay: 0.3s; }
+        .letter:nth-child(4)  { animation-delay: 0.4s; }
+        .letter:nth-child(5)  { animation-delay: 0.5s; }
+        .letter:nth-child(6)  { animation-delay: 0.6s; }
+        .letter:nth-child(7)  { animation-delay: 0.7s; }
+        .letter:nth-child(8)  { animation-delay: 0.8s; }
+        .letter:nth-child(9)  { animation-delay: 0.9s; }
+        .letter:nth-child(10) { animation-delay: 1.0s; }
+        .letter:nth-child(11) { animation-delay: 1.1s; }
+        .letter:nth-child(12) { animation-delay: 1.2s; }
+        .letter:nth-child(13) { animation-delay: 1.3s; }
+        .letter:nth-child(14) { animation-delay: 1.4s; }
+        .letter:nth-child(15) { animation-delay: 1.5s; }
+        .letter:nth-child(16) { animation-delay: 1.6s; }
+        @keyframes letterPop {
+            0% {
+                transform: translateY(80px) scale(0.6);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-25px) scale(1.15);
+            }
+            75% {
+                transform: translateY(8px) scale(0.95);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        /* Caption bounce in */
+        .caption {
+            opacity: 0;
+            animation: captionBounce 1s ease forwards 2.2s;
+        }
+        @keyframes captionBounce {
+            0% { opacity: 0; transform: translateY(30px); }
+            60% { transform: translateY(-12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* Back button bounce */
+        .back-button {
+            opacity: 0;
+            animation: buttonBounce 0.9s ease forwards 2.6s;
+        }
+        @keyframes buttonBounce {
+            0% { opacity: 0; transform: translateY(40px) scale(0.8); }
+            70% { transform: translateY(-10px) scale(1.08); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">A song that reminds me of us</h1>
+       
+        <div class="music-card">
+            <!-- Left: Spinning Vinyl -->
+            <div class="vinyl">
+                <div class="vinyl-circle">
+                    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm94cXJmbTdqMWxvazlmbmxubXJ6aG0xNGxuMTZnaDkxbHRjdjhoZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t5yMmwDAyHLZJBNJVG/giphy.gif"
+                         alt="Spinning Vinyl">
+                </div>
+            </div>
+           
+            <!-- Right: Video Player (No blocking overlay) -->
+            <div class="video-player">
+                <video id="loveVideo" loop playsinline>
+                    <source src="0401.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+       
+        <div class="caption">
+            This song always makes me think of you, my Abi Shortcake 🥰
+        </div>
+       
+        <div class="back-button">
+            <button onclick="goBack()">← Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        // Letter bounce animation for title
+        function animateTitle() {
+            const title = document.getElementById('title');
+            const text = title.innerText;
+            let newHTML = '';
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (char === ' ') {
+                    newHTML += '<span class="letter">&nbsp;</span>';
+                } else {
+                    newHTML += `<span class="letter">${char}</span>`;
+                }
+            }
+            title.innerHTML = newHTML;
+        }
+
+        function goBack() {
+            window.location.href = "yes_page.html";
+        }
+
+        window.onload = function() {
+            animateTitle();
+           
+            const video = document.getElementById('loveVideo');
+           
+            video.muted = false;
+            video.volume = 0.75;   // slightly louder
+
+            // Try autoplay with sound
+            video.play().catch((error) => {
+                console.log("Autoplay blocked, trying muted...");
+                video.muted = true;
+                video.play().then(() => {
+                    // Unmute when user clicks anywhere
+                    document.body.addEventListener('click', () => {
+                        if (video.muted) {
+                            video.muted = false;
+                            video.volume = 0.75;
+                        }
+                    }, { once: true });
+                });
+            });
+        };
+    </script>
+</body>
+</html>

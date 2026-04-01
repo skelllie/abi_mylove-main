@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY ABI SHORTCAKE</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-text">SINCE IT'S APRIL I'LL MAKE YOU MY FOOL</h1>
+        
+        <h2 id="hearts-text">
+            🤍 🩶 🖤 🤎 💜 🩵 💙 💚 💛 🧡 🩷 ❤️ ❣️ 💕 💞 💓 💗 💖 💘 💝 ❤️‍🔥 ❤️‍🩹 🫀 ♥️
+        </h2>
+
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No??</button>
+        </div>
+
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YmgyOGczbmp2bTdtYjNrcW1xaHRjNGdha25taTU3OWNwOHg0czlmMCZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/XWj51fkipHFMUNP8xB/giphy.gif" 
+                 alt="Cute GIF" class="bounce-gif">
+            
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NjBkbzV0Z2gzY2Q1eHphcjU0aDQ5M3V4ZHE3bndmMDE0ajl1dGk4OSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/wNk71OcVtOPncxNHVT/giphy.gif" 
+                 alt="Cutie GIF" class="bounce-gif" style="animation-delay: 0.3s;">
+        </div>
+    </div>
+
+    <script src="scripter.js"></script>
+
+    <script>
+        // Letter by letter bounce animation
+        function animateText(elementId) {
+            const element = document.getElementById(elementId);
+            const originalText = element.innerHTML;
+            let newHTML = '';
+
+            for (let char of originalText) {
+                if (char === ' ') {
+                    newHTML += '<span class="letter" style="animation-delay: ' + (Math.random() * 0.8 + 0.3) + 's;">&nbsp;</span>';
+                } else {
+                    newHTML += `<span class="letter" style="animation-delay: ${Math.random() * 0.8 + 0.3}s;">${char}</span>`;
+                }
+            }
+            element.innerHTML = newHTML;
+        }
+
+        // Run animations when page loads
+        window.onload = function() {
+            animateText('main-text');
+            animateText('hearts-text');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift 3 for Abi Shortcake 💝</title>
+    <link rel="stylesheet" href="gift2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+                        url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm11bWNtaWV3b3pqM2lxcXZ6eXpyNHN6dnd6aGI0ZmM5dm40MTU3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5RTbxbqoTVu1csyKGE/giphy.gif') center/cover no-repeat fixed;
+            color: white;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 182, 193, 0.18);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1#title {
+            font-size: 2.6rem;
+            margin-bottom: 50px;
+            color: #ff9aee;
+            text-shadow: 0 0 25px rgba(255, 154, 238, 0.7);
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            border: 1px solid rgba(255, 182, 193, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: translateY(60px);
+            animation: cardBounceIn 1.3s ease forwards 0.8s;
+        }
+
+        @keyframes cardBounceIn {
+            0% { opacity: 0; transform: translateY(80px) scale(0.88); }
+            60% { transform: translateY(-20px) scale(1.04); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .message {
+            font-family: 'Great Vibes', 'Dancing Script', cursive;
+            font-size: 2.1rem;
+            line-height: 1.55;
+            color: #ffe4f0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .caption {
+            font-size: 1.35rem;
+            color: #ffbfd9;
+            opacity: 0;
+            animation: captionBounce 1s ease forwards 2.2s;
+        }
+
+        @keyframes captionBounce {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .back-button {
+            margin-top: 50px;
+            opacity: 0;
+            animation: buttonBounce 0.9s ease forwards 2.8s;
+        }
+
+        .back-button button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 38px;
+            font-size: 1.15rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.45);
+            transition: all 0.3s ease;
+        }
+
+        .back-button button:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        @keyframes buttonBounce {
+            0% { opacity: 0; transform: translateY(40px) scale(0.8); }
+            70% { transform: translateY(-10px) scale(1.08); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Title letter animation */
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: letterPop 0.95s ease forwards;
+        }
+        .letter:nth-child(1)  { animation-delay: 0.1s; }
+        .letter:nth-child(2)  { animation-delay: 0.15s; }
+        .letter:nth-child(3)  { animation-delay: 0.2s; }
+        .letter:nth-child(4)  { animation-delay: 0.25s; }
+        .letter:nth-child(5)  { animation-delay: 0.3s; }
+        .letter:nth-child(6)  { animation-delay: 0.35s; }
+        .letter:nth-child(7)  { animation-delay: 0.4s; }
+        .letter:nth-child(8)  { animation-delay: 0.45s; }
+        .letter:nth-child(9)  { animation-delay: 0.5s; }
+        .letter:nth-child(10){ animation-delay: 0.55s; }
+        .letter:nth-child(11){ animation-delay: 0.6s; }
+        .letter:nth-child(12){ animation-delay: 0.65s; }
+
+        @keyframes letterPop {
+            0% { transform: translateY(70px) scale(0.6); opacity: 0; }
+            50% { transform: translateY(-22px) scale(1.12); }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">A little message for you</h1>
+        
+        <div class="message-card">
+            <div class="message" id="loveMessage">
+                My dearest Abi Shortcake,<br><br>
+                Every day with you feels like a beautiful dream.<br>
+                Thank you for being my sunshine, my peace, and my favorite person.<br>
+                I love you more than words can say 🥰
+            </div>
+            
+            <div class="caption">
+                Always yours 💕
+            </div>
+                <div class="caption">
+                Jayzee The Realest Nigg
+            </div>
+        </div>
+        
+        <div class="back-button">
+            <button onclick="goBack()">← Go Back</button>
+        </div>
+    </div>
+
+    <!-- Hidden Video used as Audio (MP4) -->
+    <video id="loveAudio" loop autoplay muted style="display: none;">
+        <source src="0401 (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Title letter animation
+        function animateTitle() {
+            const title = document.getElementById('title');
+            const text = title.innerText;
+            let newHTML = '';
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (char === ' ') {
+                    newHTML += '<span class="letter">&nbsp;</span>';
+                } else {
+                    newHTML += `<span class="letter">${char}</span>`;
+                }
+            }
+            title.innerHTML = newHTML;
+        }
+
+        function goBack() {
+            window.location.href = "yes_page.html";
+        }
+
+        window.onload = function() {
+            animateTitle();
+
+            const videoAudio = document.getElementById('loveAudio');
+            
+            // Unmute and set volume
+            videoAudio.muted = false;
+            videoAudio.volume = 0.65;   // Adjust volume here (0.0 - 1.0)
+
+            // Try to autoplay
+            videoAudio.play().catch(() => {
+                // Fallback: Play after user clicks anywhere on the page
+                document.body.addEventListener('click', function playOnClick() {
+                    videoAudio.muted = false;
+                    videoAudio.play();
+                    document.body.removeEventListener('click', playOnClick);
+                }, { once: true });
+            });
+        };
+    </script>
+</body>
+</html>

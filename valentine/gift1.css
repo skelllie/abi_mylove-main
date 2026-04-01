@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fffaf0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    padding: 15px 10px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.45em;
+    color: #c2185b;
+    margin-bottom: 40px;
+}
+
+/* Compact Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 10px;
+}
+
+.gift-item {
+    width: 185px;           /* Smaller width */
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gift-item img {
+    width: 100%;
+    height: 220px;          /* Smaller height */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Bounce Effect */
+.bounce-once {
+    animation: memoryBounce 0.8s ease;
+}
+
+@keyframes memoryBounce {
+    0%   { transform: scale(0.8) rotate(-8deg); }
+    50%  { transform: scale(1.15) rotate(8deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+/* Letter Animation */
+.letter {
+    display: inline-block;
+    animation: letterPop 1.1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes letterPop {
+    0%   { transform: translateY(35px); opacity: 0; }
+    70%  { transform: translateY(-12px); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 45px;
+}
+
+.back-button button {
+    font-size: 1.3em;
+    padding: 12px 40px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+}
+
+.back-button button:hover {
+    background: #b71c1c;
+    transform: translateY(-3px);
+}
+
+/* Make sure it fits on mobile without much scrolling */
+@media (max-width: 600px) {
+    h1 { font-size: 2.4em; }
+    .subtitle { font-size: 1.3em; }
+    .gift-item { 
+        width: 165px; 
+    }
+    .gift-item img { 
+        height: 195px; 
+    }
+}

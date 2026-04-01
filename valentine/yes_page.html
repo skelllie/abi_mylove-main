@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LETS GO LOVE U BABY! 💛</title>
+    <link rel="stylesheet" href="yes_page.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text" id="bounce-text">
+            YA I KNOW YOU WOULD PRESS YES 💛<br>
+            🎉
+        </h1>
+       
+        <div class="image-container">
+           
+            <!-- Gift 1 -->
+            <div class="image-item bounce" onclick="goToGift(1)">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXY3OWJmcDhuODg0cW16aHNpZmxrZHk2MGplOGVkamgybzh0NDEyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/giKdkKxdDWecg524cE/giphy.gif"
+                     alt="Gift 1">
+                <p>Gift 1 💝</p>
+            </div>
+
+            <!-- Gift 2 -->
+            <div class="image-item bounce" style="animation-delay: 0.2s;" onclick="goToGift(2)">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXY3OWJmcDhuODg0cW16aHNpZmxrZHk2MGplOGVkamgybzh0NDEyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/giKdkKxdDWecg524cE/giphy.gif"
+                     alt="Gift 2">
+                <p>Gift 2 🥰</p>
+            </div>
+
+            <!-- Gift 3 -->
+            <div class="image-item bounce" style="animation-delay: 0.4s;" onclick="goToGift(3)">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXY3OWJmcDhuODg0cW16aHNpZmxrZHk2MGplOGVkamgybzh0NDEyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/giKdkKxdDWecg524cE/giphy.gif"
+                     alt="Gift 3">
+                <p>Gift 3 ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Letter by letter bouncing animation
+        function animateText() {
+            const textElement = document.getElementById('bounce-text');
+            const text = textElement.innerHTML;
+            let newHTML = '';
+           
+            const parts = text.split('<br>');
+           
+            parts.forEach((part, index) => {
+                for (let char of part) {
+                    if (char === ' ') {
+                        newHTML += '<span class="letter" style="animation-delay: ' + (Math.random() * 0.8 + 0.2) + 's;">&nbsp;</span>';
+                    } else {
+                        newHTML += `<span class="letter" style="animation-delay: ${Math.random() * 0.8 + 0.2}s;">${char}</span>`;
+                    }
+                }
+                if (index < parts.length - 1) {
+                    newHTML += '<br>';
+                }
+            });
+           
+            textElement.innerHTML = newHTML;
+        }
+
+        // Function to go to different gift pages
+        function goToGift(giftNumber) {
+            if (giftNumber === 1) {
+                window.location.href = "gift_1.html";
+            } else if (giftNumber === 2) {
+                window.location.href = "gift_2.html";
+            } else if (giftNumber === 3) {
+                window.location.href = "gift_3.html";
+            }
+        }
+
+        // Run animation when page loads
+        window.onload = animateText;
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift 1 for Abi Shortcake 💝</title>
+    <link rel="stylesheet" href="gift1.css">
+    <style>
+        /* Title letter bounce - para consistent sa ibang gifts */
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: letterPop 0.9s ease forwards;
+        }
+        @keyframes letterPop {
+            0% { transform: translateY(80px) scale(0.6); opacity: 0; }
+            50% { transform: translateY(-25px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Captured Memories</h1>
+        <p class="subtitle">with my Abi Shortcake 💛</p>
+        
+        <div class="gallery">
+            <div class="gift-item" onclick="bounceImage(this)">
+                <img src="6055237540820143185.jpg" alt="Memory 1">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(-4deg);">
+                <img src="6055237540820143202.jpg" alt="Memory 2">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(5deg);">
+                <img src="6055237540820143217.jpg" alt="Memory 3">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)">
+                <img src="6082546725299537193.jpg" alt="Memory 4">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(-6deg);">
+                <img src="6082546725299537203.jpg" alt="Memory 5">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(4deg);">
+                <img src="6093924239699283460.jpg" alt="Memory 6">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)">
+                <img src="6093924239699283524.jpg" alt="Memory 7">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(-3deg);">
+                <img src="6172515166185442024.jpg" alt="Memory 8">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)" style="transform: rotate(6deg);">
+                <img src="6172515166185442084.jpg" alt="Memory 9">
+            </div>
+            <div class="gift-item" onclick="bounceImage(this)">
+                <img src="6287167157783609336.jpg" alt="Memory 10">
+            </div>
+        </div>
+
+        <div class="back-button">
+            <button onclick="goBack()">← Go Back</button>
+        </div>
+    </div>
+
+    <!-- Background Music - Autoplay + Loop -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="Lil Peep - nuts (feat. rainy bear) (Official Audio).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function bounceImage(element) {
+            element.classList.add('bounce-once');
+            setTimeout(() => {
+                element.classList.remove('bounce-once');
+            }, 800);
+        }
+
+        function goBack() {
+            window.location.href = "yes_page.html";
+        }
+
+        // Title letter bounce
+        function animateTitle() {
+            const title = document.getElementById('title');
+            const text = title.innerText;
+            let newHTML = '';
+            for (let char of text) {
+                newHTML += char === ' '
+                    ? '<span class="letter">&nbsp;</span>'
+                    : `<span class="letter">${char}</span>`;
+            }
+            title.innerHTML = newHTML;
+        }
+
+        window.onload = function() {
+            animateTitle();
+
+            // Staggered bounce animation for photos (original mo)
+            const items = document.querySelectorAll('.gift-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('bounce-once');
+                    setTimeout(() => item.classList.remove('bounce-once'), 800);
+                }, 180 + index * 110);
+            });
+
+            // === MP3 AUTOPLAY & LOOP ===
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.65;   // Baguhin mo 'to kung gusto mo mas malakas o mahina
+
+            music.play().catch(() => {
+                // Kung ma-block ng browser, magpe-play pag nag-click ang user
+                document.body.addEventListener('click', function playMusic() {
+                    music.play();
+                    document.body.removeEventListener('click', playMusic);
+                }, { once: true });
+            });
+        };
+    </script>
+</body>
+</html>
